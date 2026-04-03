@@ -1,0 +1,14 @@
+# Ignore upload files (keep empty directory)
+uploads/*
+!uploads/.gitkeep
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Secrets and Config
+config/env.php
+
+# IDE Files
+.vscode/
+.idea/
