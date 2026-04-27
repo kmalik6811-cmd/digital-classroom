@@ -52,7 +52,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
             mysqli_stmt_execute($stmt2);
 
             // Create reset link
-            $reset_link = "http://localhost/digital_classroom/auth/reset_password.php?token=".$token;
+            $reset_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/auth/reset_password.php?token=' . $token;
 
             // Send Email
             $mail = new PHPMailer(true);
@@ -112,7 +112,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
 <html>
 <head>
 <title>Forgot Password | Digital Classroom</title>
-<link rel="stylesheet" href="/digital_classroom/css/style.css?v=<?= time(); ?>">
+<link rel="stylesheet" href="/css/style.css?v=<?= time(); ?>">
 </head>
 <body>
 

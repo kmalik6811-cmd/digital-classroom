@@ -71,7 +71,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <html>
 <head>
 <title>Reset Password</title>
-<link rel="stylesheet" href="/digital_classroom/css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 

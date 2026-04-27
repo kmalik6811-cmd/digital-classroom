@@ -55,7 +55,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 <html>
 <head>
 <title>Verify Email | Digital Classroom</title>
-<link rel="stylesheet" href="/digital_classroom/css/style.css?v=<?= time(); ?>">
+<link rel="stylesheet" href="/css/style.css?v=<?= time(); ?>">
 <style>
 .otp-input {
     letter-spacing: 12px;

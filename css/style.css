@@ -565,7 +565,7 @@ a:hover{
 
 .auth-image-side {
     flex: 1;
-    background: url('/digital_classroom/images/auth_image.png') center/cover no-repeat;
+    background: url('../images/auth_image.png') center/cover no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;

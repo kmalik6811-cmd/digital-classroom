@@ -1,5 +1,3 @@
-CREATE DATABASE IF NOT EXISTS digital_classroom;
-USE digital_classroom;
 
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
