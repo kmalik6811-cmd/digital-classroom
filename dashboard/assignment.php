@@ -182,11 +182,15 @@ if(isset($_FILES['file']['name']) && $_FILES['file']['name']!=""){
                 $query = mysqli_query($conn,"SELECT * FROM assignments ORDER BY id DESC");
             }
 
-            if(mysqli_num_rows($query)==0){
-                echo "<p>No assignments available</p>";
-            }
+            if(!$query){
+                echo "<p class='error'>Database Error: " . mysqli_error($conn) . "</p>";
+            } else {
+                if(mysqli_num_rows($query)==0){
+                    echo "<p>No assignments available</p>";
+                }
 
-            while($row=mysqli_fetch_assoc($query)){
+                while($row=mysqli_fetch_assoc($query)){
+            
             ?>
             <div class="option-box">
                 <h3 style="color:#4f46e5; margin-bottom:5px;"><?php echo htmlspecialchars($row['title']); ?></h3>
@@ -202,7 +206,7 @@ if(isset($_FILES['file']['name']) && $_FILES['file']['name']!=""){
                 </form>
                 <?php endif; ?>
             </div>
-            <?php } ?>
+            <?php } } ?>
         </div>
     </div>
 </div>

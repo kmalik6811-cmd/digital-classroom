@@ -151,11 +151,15 @@ $msg="Upload failed!";
                 $query = mysqli_query($conn,"SELECT * FROM notes ORDER BY id DESC");
             }
 
-            if(mysqli_num_rows($query)==0){
-                echo "<p>No notes available</p>";
-            }
+            if(!$query){
+                echo "<p class='error'>Database Error: " . mysqli_error($conn) . "</p>";
+            } else {
+                if(mysqli_num_rows($query)==0){
+                    echo "<p>No notes available</p>";
+                }
 
-            while($row=mysqli_fetch_assoc($query)){
+                while($row=mysqli_fetch_assoc($query)){
+            
             ?>
             <div class="option-box">
                 <h3 style="color:#059669; margin-bottom:5px;"><?php echo htmlspecialchars($row['title']); ?></h3>
@@ -165,7 +169,7 @@ $msg="Upload failed!";
                     Download PDF
                 </a>
             </div>
-            <?php } ?>
+            <?php } } ?>
         </div>
     </div>
 </div>
